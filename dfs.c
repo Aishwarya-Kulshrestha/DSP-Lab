@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int visited[5]={0,0,0,0,0};
 int stack[10]={0,0,0,0,0,0,0,0,0,0};
