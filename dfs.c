@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h>           //for exit() fxn
 
 int visited[5]={0,0,0,0,0};
 int stack[10]={0,0,0,0,0,0,0,0,0,0};
 int top=-1;
-int flag=0;
+int flag=0;          //flags is set to 1 when the node is found
 	
 int push(int i)
 {
@@ -25,19 +25,19 @@ int pop()
 int dfs(int G[5][5],int v,int d)
 {
 	
-	visited[v]=1;
-	if(v==d)
+	visited[v]=1;      //sets the positiion of node to 1 indicating it has been visited
+	if(v==d)    //returns 1 to the calling fxn when the node is found
 	{ 
 		printf("%d",v);
 		return 1;
 	}
 	printf("%d ->",v);
 	
-	for(int i=4;i>=0;i--)
+	for(int i=4;i>=0;i--)         //I ran this loop in reverse order just bec they pop inorder from stack
 		if(G[v][i]==1 && visited[i]==0)
 			push(i);
 			
-	while(top!=-1)
+	while(top!=-1)          //running loop until all nodes from stack are popped and visited
 	{
 		if(visited[stack[top]]==0 && flag==0)
 			flag=dfs(G,pop(),d);
