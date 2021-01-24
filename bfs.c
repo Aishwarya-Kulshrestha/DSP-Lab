@@ -51,13 +51,13 @@ int dequeue()
 
 int bfs(int G[5][5],int v,int d)
 {
+	visited[v]=1;
 	if(v==d) 
 	{ 
 		printf("%d",v);
 		return 1;
 	}
 	printf("%d ->",v);
-	visited[v]=1;
 	for(int i=0;i<5;i++)
 		if(G[v][i]==1 && visited[i]==0)
 			enqueue(i);
@@ -65,7 +65,7 @@ int bfs(int G[5][5],int v,int d)
 	while(Q)
 	{
 		if(visited[Q->data]==0 && flag==0) 
-			bfs(G,dequeue(),d);
+			flag=bfs(G,dequeue(),d);
 		
 		else dequeue();
 	}
@@ -83,8 +83,18 @@ int main()
 		     {0,0,1,0,1}};
 	printf("\nEnter Start node: ");
 	scanf("%d",&v);
+	if(v<0 || v>4) 
+	{
+		printf("\nInvalid entry\n");
+		exit(0);
+	}
 	printf("\nEnter End node: ");
 	scanf("%d",&d);
+	if(v<0 || v>4) 
+	{
+		printf("\nInvalid entry\n");
+		exit(0);
+	}
 	printf("\n"); 
 	bfs(G,v,d);
 	
