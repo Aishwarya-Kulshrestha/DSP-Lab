@@ -77,10 +77,10 @@ int main()
 	int v,d;
 	rear=front=NULL;
 	int G[5][5]={{1,1,1,1,0},
-				{1,1,1,0,0},
-				{1,1,1,0,1},
-				{1,0,0,1,0},
-				{0,0,1,0,1}};
+		     {1,1,1,0,0},
+		     {1,1,1,0,1},
+		     {1,0,0,1,0},
+		     {0,0,1,0,1}};
 	printf("\nEnter Start node: ");
 	scanf("%d",&v);
 	printf("\nEnter End node: ");
