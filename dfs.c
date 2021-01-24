@@ -56,12 +56,25 @@ int main()
 				{0,0,1,0,1}};
 	printf("\nEnter Start node: ");
 	scanf("%d",&v);
+	if(v<0 || v>4)
+	{
+		printf("\nInvalid entry\n");
+		exit(0);
+	}
 	printf("\nEnter End node: ");
 	scanf("%d",&d);
+	if(v<0 || v>4)
+	{
+		printf("\nInvalid entry\n");
+		exit(0);
+	}
 	printf("\n"); 
 	dfs(G,v,d);
 	
 	return 0;
 }
+			
+	
+
 			
 	
